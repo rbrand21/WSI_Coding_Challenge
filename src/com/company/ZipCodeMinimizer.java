@@ -16,7 +16,7 @@ import java.util.List;
  * 2)Iterate through the list and compare current iteration to the most recent range in the minimized list.
  *
  * 3)If the current list range is mutually exclusive with the most recent range in the minimized list, add it to the
- * minimized list, other wise collapse them into one range.
+ * minimized list, otherwise collapse them into one range.
  *
  * A user defined object, ZipCodeRange, was used to make the code more readable and maintainable.
  */
