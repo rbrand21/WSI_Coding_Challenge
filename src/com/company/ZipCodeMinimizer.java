@@ -7,8 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Takes in a list of zip code ranges as an array format and converts them to a more consumable type.
- * It then takes that list and minimizes the ranges so that they are all mutually exclusive.
+ * Takes in a list of zip code ranges and minimizes the ranges so that they are all mutually exclusive.
  *
  * To do the above minimization the following algorithm is used:
  * 1) Sort the list so we can rely on the assumption that the min range is increasing in order. This allows us to
