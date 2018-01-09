@@ -39,7 +39,7 @@ public class ZipCodeMinimizer {
 
         zips = sortZipCodes(zips);
 
-        minZipCodes.clear();
+        minZipCodes = new ArrayList<>();
 
         minZipCodes.add(zips.get(0));
 

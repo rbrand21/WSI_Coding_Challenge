@@ -16,6 +16,11 @@ public class ZipCodeRange implements Comparable<ZipCodeRange> {
         setEnd(zips[1]);
     }
 
+    public ZipCodeRange(int lower, int upper){
+        setStart(lower);
+        setEnd(upper);
+    }
+
     public void setStart(int start) {
         this.start = start;
     }
