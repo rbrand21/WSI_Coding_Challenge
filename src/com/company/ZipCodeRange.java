@@ -1,6 +1,5 @@
 package com.company;
 
-import org.jetbrains.annotations.NotNull;
 
 /**
  * A class used to better represent the Zip code range. We can use meaningful method names from this class
@@ -11,7 +10,7 @@ public class ZipCodeRange implements Comparable<ZipCodeRange> {
     private int _start;
     private int _end;
 
-    public ZipCodeRange(@NotNull int[] zips) {
+    public ZipCodeRange(int[] zips) {
         _checkFormatting(zips);
         setStart(zips[0]);
         setEnd(zips[1]);
