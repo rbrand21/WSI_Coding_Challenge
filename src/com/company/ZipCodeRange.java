@@ -7,29 +7,29 @@ package com.company;
  * This class also contains the code for how comparison happens, which is a great place for it to exist.
  */
 public class ZipCodeRange implements Comparable<ZipCodeRange> {
-    private int _start;
-    private int _end;
+    private int start;
+    private int end;
 
     public ZipCodeRange(int[] zips) {
-        _checkFormatting(zips);
+        checkFormatting(zips);
         setStart(zips[0]);
         setEnd(zips[1]);
     }
 
     public void setStart(int start) {
-        this._start = start;
+        this.start = start;
     }
 
     public void setEnd(int end) {
-        this._end = end;
+        this.end = end;
     }
 
     public int getStart() {
-        return _start;
+        return start;
     }
 
     public int getEnd() {
-        return _end;
+        return end;
     }
 
     //If they are equal it doesn't matter which one goes first.
@@ -46,18 +46,18 @@ public class ZipCodeRange implements Comparable<ZipCodeRange> {
     /**
      * Private Methods
      */
-    private void _checkFormatting(int[] zips) {
-        _checkArraySize(zips);
-        _checkOrdering(zips);
+    private void checkFormatting(int[] zips) {
+        checkArraySize(zips);
+        checkOrdering(zips);
     }
 
-    private void _checkArraySize(int[] zips) {
+    private void checkArraySize(int[] zips) {
         if(zips.length != 2){
             throw new IllegalArgumentException("Must pass in valid range with size of 2");
         }
     }
 
-    private void _checkOrdering(int[] zips) {
+    private void checkOrdering(int[] zips) {
         if(zips[0] > zips[1]){
             throw new IllegalArgumentException("Range not valid, must be in format of (min - max)");
         }

@@ -28,8 +28,8 @@ class ZipCodeMinimizerTest {
     }
 
     private void addZipCodeRange(int lower, int upper) {
-        int[] zip_code = new int[]{lower, upper};
-        testList.add(new ZipCodeRange(zip_code));
+        int[] zipCode = new int[]{lower, upper};
+        testList.add(new ZipCodeRange(zipCode));
     }
 
     @Test

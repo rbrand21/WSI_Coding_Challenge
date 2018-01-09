@@ -11,32 +11,32 @@ public class ZipCodeRangeConverter{
 
     /**
      * Obtain a converted list of user defined zip code ranges.
-     * @param raw_zips The collection of raw formatted zip code ranges
+     * @param rawZips The collection of raw formatted zip code ranges
      * @return The collection of more consumable zip code ranges.
      */
-    public List<ZipCodeRange> convertFromRawZipCodes(List<int[]> raw_zips) {
-        List<ZipCodeRange> converted_zips = new ArrayList<>();
+    public List<ZipCodeRange> convertFromRawZipCodes(List<int[]> rawZips) {
+        List<ZipCodeRange> convertedZips = new ArrayList<>();
 
-        for(int i=0; i< raw_zips.size(); i++){
-            ZipCodeRange zip = new ZipCodeRange(raw_zips.get(i));
-            converted_zips.add(zip);
+        for(int i=0; i< rawZips.size(); i++){
+            ZipCodeRange zip = new ZipCodeRange(rawZips.get(i));
+            convertedZips.add(zip);
         }
 
-        return converted_zips;
+        return convertedZips;
     }
 
     /**
      * Obtain a converted list of raw zip code ranges.
-     * @param converted_zips The list of user defined obj zip codes
+     * @param convertedZips The list of user defined obj zip codes
      * @return The collection of raw formatted zip code ranges
      */
-    public List<int[]> convertToRawZipCodes(List<ZipCodeRange> converted_zips){
-        List<int[]> raw_zips = new ArrayList<>();
-        for(int i=0; i<converted_zips.size(); i++){
-            int[] zip = new int[]{converted_zips.get(i).getStart(), converted_zips.get(i).getEnd()};
-            raw_zips.add(zip);
+    public List<int[]> convertToRawZipCodes(List<ZipCodeRange> convertedZips){
+        List<int[]> rawZips = new ArrayList<>();
+        for(int i=0; i<convertedZips.size(); i++){
+            int[] zip = new int[]{convertedZips.get(i).getStart(), convertedZips.get(i).getEnd()};
+            rawZips.add(zip);
         }
 
-        return raw_zips;
+        return rawZips;
     }
 }
