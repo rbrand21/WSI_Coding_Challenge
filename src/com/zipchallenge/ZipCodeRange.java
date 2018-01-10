@@ -7,6 +7,8 @@ package com.zipchallenge;
  * This class also contains the code for how comparison happens, which is a great place for it to exist.
  */
 public class ZipCodeRange implements Comparable<ZipCodeRange> {
+    public static final String FIRST_LESS_THAN_SECOND_MESSAGE = "The first number of the range must be less than the second";
+    public static final String INVALID_5_DIGIT_ZIP = "Please input valid 5 digit zip codes";
     private int start;
     private int end;
 
@@ -17,6 +19,8 @@ public class ZipCodeRange implements Comparable<ZipCodeRange> {
     }
 
     public ZipCodeRange(int lower, int upper){
+        checkLowerLessThanUpper(lower, upper);
+        checkValidZipCodes(lower, upper);
         setStart(lower);
         setEnd(upper);
     }
@@ -68,4 +72,16 @@ public class ZipCodeRange implements Comparable<ZipCodeRange> {
         }
     }
 
+    private void checkLowerLessThanUpper(int lower, int upper) {
+        if(lower > upper){
+            throw new IllegalArgumentException(FIRST_LESS_THAN_SECOND_MESSAGE);
+        }
+    }
+
+    private void checkValidZipCodes(int lower, int upper) {
+        if(String.valueOf(lower).length() < 5 || String.valueOf(upper).length() < 5){
+            throw new IllegalArgumentException(INVALID_5_DIGIT_ZIP);
+        }
+    }
+    
 }

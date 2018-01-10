@@ -27,7 +27,6 @@ public class ZipCodeMinimizer {
      * Initialize our list that will be used to manipulate data later
      */
     public ZipCodeMinimizer() {
-        minZipCodes = new ArrayList<>();
     }
 
     /**
