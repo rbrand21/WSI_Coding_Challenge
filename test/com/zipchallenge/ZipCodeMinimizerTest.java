@@ -1,4 +1,4 @@
-package com.zipchallenge.Tests;
+package com.zipchallenge;
 
 import com.zipchallenge.ZipCodeRange;
 import com.zipchallenge.ZipCodeMinimizer;
