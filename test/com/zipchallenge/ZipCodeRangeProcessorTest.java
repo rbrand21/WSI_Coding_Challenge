@@ -58,7 +58,17 @@ class ZipCodeRangeProcessorTest {
 
         assertThrows(IllegalArgumentException.class, () -> {
                     zipList = processor.readZipCodesFromInput(s);
-                }, processor.ODD_NUMBER_OF_NUMBERS_MESSAGE
+                }, processor.INCORRECT_NUMBER_OF_NUMBERS_MESSAGE
+        );
+    }
+
+    @Test
+    public void noNumbers(){
+        String s = "\n";
+
+        assertThrows(IllegalArgumentException.class, () -> {
+                    zipList = processor.readZipCodesFromInput(s);
+                }, processor.INCORRECT_NUMBER_OF_NUMBERS_MESSAGE
         );
     }
 }

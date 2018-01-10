@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class ZipCodeRangeProcessor {
 
     final String NON_EMPTY_STRING_MESSAGE = "Please input a non-empty string";
-    final String ODD_NUMBER_OF_NUMBERS_MESSAGE = "Please input an even number of zip codes (ranges)";
+    final String INCORRECT_NUMBER_OF_NUMBERS_MESSAGE = "Please input a nonzero even number of zip codes (ranges)";
 
     public ZipCodeRangeProcessor() {
 
@@ -36,8 +36,8 @@ public class ZipCodeRangeProcessor {
     }
 
     private void checkNumbers(List<Integer> numbers) {
-        if(numbers.size() % 2 != 0){
-            throw new IllegalArgumentException(ODD_NUMBER_OF_NUMBERS_MESSAGE);
+        if(numbers.size() % 2 != 0 || numbers.size() == 0){
+            throw new IllegalArgumentException(INCORRECT_NUMBER_OF_NUMBERS_MESSAGE);
         }
     }
 
