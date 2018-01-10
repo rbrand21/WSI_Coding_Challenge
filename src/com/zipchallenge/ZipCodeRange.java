@@ -12,12 +12,6 @@ public class ZipCodeRange implements Comparable<ZipCodeRange> {
     private int start;
     private int end;
 
-    public ZipCodeRange(int[] zips) {
-        checkFormatting(zips);
-        setStart(zips[0]);
-        setEnd(zips[1]);
-    }
-
     public ZipCodeRange(int lower, int upper){
         checkLowerLessThanUpper(lower, upper);
         checkValidZipCodes(lower, upper);
@@ -55,23 +49,6 @@ public class ZipCodeRange implements Comparable<ZipCodeRange> {
     /**
      * Private Methods
      */
-    private void checkFormatting(int[] zips) {
-        checkArraySize(zips);
-        checkOrdering(zips);
-    }
-
-    private void checkArraySize(int[] zips) {
-        if(zips.length != 2){
-            throw new IllegalArgumentException("Must pass in valid range with size of 2");
-        }
-    }
-
-    private void checkOrdering(int[] zips) {
-        if(zips[0] > zips[1]){
-            throw new IllegalArgumentException("Range not valid, must be in format of (min - max)");
-        }
-    }
-
     private void checkLowerLessThanUpper(int lower, int upper) {
         if(lower > upper){
             throw new IllegalArgumentException(FIRST_LESS_THAN_SECOND_MESSAGE);

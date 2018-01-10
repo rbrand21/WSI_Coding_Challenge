@@ -18,19 +18,9 @@ class ZipCodeRangeTest {
     }
 
     private ZipCodeRange getZipCodeRange(int lower, int upper) {
-        int[] zipRange = new int[]{lower, upper};
-
-        ZipCodeRange z = new ZipCodeRange(zipRange);
+        ZipCodeRange z = new ZipCodeRange(lower, upper);
 
         return z;
-    }
-
-    @Test
-    void instantiateWithArray(){
-        ZipCodeRange z = getZipCodeRange(93644, 95817);
-
-        assertEquals(93644, z.getStart());
-        assertEquals(95817, z.getEnd());
     }
 
     @Test
@@ -39,22 +29,6 @@ class ZipCodeRangeTest {
         ZipCodeRange largeZip = getZipCodeRange(95817, 95817);
 
         assertEquals(-1, smallZip.compareTo(largeZip));
-    }
-
-    @Test
-    public void incorrectArraySizeInstantiation(){
-        int[] zipRange = new int[]{95817};
-        assertThrows(IllegalArgumentException.class, ()->{
-           ZipCodeRange z = new ZipCodeRange(zipRange);
-        });
-    }
-
-    @Test
-    public void mixedOrderInstantiation(){
-        int[] zipRange = new int[]{95000, 94000};
-        assertThrows(IllegalArgumentException.class, ()->{
-            ZipCodeRange z = new ZipCodeRange(zipRange);
-        });
     }
 
     @Test
