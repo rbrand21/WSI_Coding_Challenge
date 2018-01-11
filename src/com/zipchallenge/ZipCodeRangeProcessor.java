@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 
 //TODO: Fix up main even more
 //TODO: Add print statements in main to ask for user input then to tell them here's there minimized list
-//TODO: Negative numbers
 
 /**
  * The ZipCodeRangeProcessor is responsible for parsing the input string for numbers,
