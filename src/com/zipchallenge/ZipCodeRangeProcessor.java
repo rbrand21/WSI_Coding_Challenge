@@ -1,6 +1,5 @@
 package com.zipchallenge;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ public class ZipCodeRangeProcessor {
      * @param s The string to parse for numbers
      * @return Extracted ZipCodeRanges from the passed in string.
      */
-    public @NotNull List<ZipCodeRange> readZipCodesFromInput(String s) {
+    public List<ZipCodeRange> readZipCodesFromInput(String s) {
         List<Integer> numbers;
         List<ZipCodeRange> zips;
 

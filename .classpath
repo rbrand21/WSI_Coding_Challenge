@@ -2,6 +2,8 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="var" path="MAVEN_REPOSITORY/org/junit/jupiter/junit-jupiter-api/5.0.0/junit-jupiter-api-5.0.0.jar"/>
+	<classpathentry kind="var" path="APPLICATION_HOME_DIR/redist/annotations-java8.jar"/>
 	<classpathentry kind="output" path="out/production/WSICodeChallenge"/>
 </classpath>

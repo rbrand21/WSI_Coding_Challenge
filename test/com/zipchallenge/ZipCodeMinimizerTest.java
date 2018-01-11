@@ -1,7 +1,5 @@
 package com.zipchallenge;
 
-import com.zipchallenge.ZipCodeRange;
-import com.zipchallenge.ZipCodeMinimizer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
