@@ -16,6 +16,10 @@ public class ZipCode {
         return value;
     }
 
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     /**
      * Zipcodes should be a valid 5 digit range ranging from 10000 - 99999
      * @param value The value to be tested.

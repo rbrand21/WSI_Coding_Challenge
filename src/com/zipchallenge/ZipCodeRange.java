@@ -3,34 +3,34 @@ package com.zipchallenge;
 
 /**
  * A class used to better represent the Zip code range. We can use meaningful method names from this class
- * instead of array indexes.
+ * instead of array indexes. We can also abstract away the concept of a range, or even a ZipCode.
  * ZipCodeRange contains all of the error and invalid ZipCode checks (negative numbers, etc...).
  */
 public class ZipCodeRange implements Comparable<ZipCodeRange> {
     public static final String FIRST_LESS_THAN_SECOND_MESSAGE = "The first number of the range must be less than the second";
-    private int start;
-    private int end;
+    private ZipCode start;
+    private ZipCode end;
 
     public ZipCodeRange(int lower, int upper){
         checkLowerLessThanUpper(lower, upper);
-        setStart(lower);
-        setEnd(upper);
+        start = new ZipCode(lower);
+        end = new ZipCode(upper);
     }
 
     public void setStart(int start) {
-        this.start = start;
+        this.start.setValue(start);
     }
 
     public void setEnd(int end) {
-        this.end = end;
+        this.end.setValue(end);
     }
 
     public int getStart() {
-        return start;
+        return start.getValue();
     }
 
     public int getEnd() {
-        return end;
+        return end.getValue();
     }
 
     /**
