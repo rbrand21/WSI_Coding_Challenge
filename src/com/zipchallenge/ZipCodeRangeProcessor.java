@@ -5,6 +5,18 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+//TODO: Comment this class.
+//TODO: Convert all error messages to constants
+//TODO: Fix up main even more
+//TODO: Add print statements in main to ask for user input then to tell them here's there minimized list
+//TODO: Negative numbers
+
+/**
+ * The ZipCodeRangeProcessor is responsible for parsing the input string for numbers,
+ * verifying that the number of numbers input looks like they could be ZipCodeRanges,
+ * and returning a List back to the caller.
+ * For the actual verification of valid ZipCodeRanges, see ZipCodeRange.
+ */
 public class ZipCodeRangeProcessor {
 
     final String NON_EMPTY_STRING_MESSAGE = "Please input a non-empty string";
@@ -14,6 +26,12 @@ public class ZipCodeRangeProcessor {
 
     }
 
+    /**
+     * Parse the incoming string for numbers, check that the amount of numbers is correct,
+     * and convert them to ZipCodeRanges.
+     * @param s The string to parse for numbers
+     * @return Extracted ZipCodeRanges from the passed in string.
+     */
     public List<ZipCodeRange> readZipCodesFromInput(String s) {
         List<Integer> numbers;
         List<ZipCodeRange> zips;
@@ -41,6 +59,11 @@ public class ZipCodeRangeProcessor {
         }
     }
 
+    /**
+     * Use Pattern and Matcher class so that we can use regex in matching on our string
+     * @param s The string we're parsing for numbers
+     * @return List of numbers that were parsed
+     */
     private List<Integer> parseInputForNumbers(String s) {
         List<Integer> numbers = new ArrayList<>();
 

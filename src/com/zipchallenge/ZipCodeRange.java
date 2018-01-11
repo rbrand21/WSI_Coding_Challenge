@@ -8,13 +8,13 @@ package com.zipchallenge;
  */
 public class ZipCodeRange implements Comparable<ZipCodeRange> {
     public static final String FIRST_LESS_THAN_SECOND_MESSAGE = "The first number of the range must be less than the second";
-    public static final String INVALID_5_DIGIT_ZIP = "Please input valid 5 digit zip codes";
+    public static final String INVALID_5_DIGIT_ZIP_RANGE = "Please input valid 5 digit zip codes";
     private int start;
     private int end;
 
     public ZipCodeRange(int lower, int upper){
         checkLowerLessThanUpper(lower, upper);
-        checkValidZipCodes(lower, upper);
+        checkValidZipCodeRange(lower, upper);
         setStart(lower);
         setEnd(upper);
     }
@@ -46,18 +46,24 @@ public class ZipCodeRange implements Comparable<ZipCodeRange> {
         }
     }
 
-    /**
-     * Private Methods
-     */
     private void checkLowerLessThanUpper(int lower, int upper) {
         if(lower > upper){
             throw new IllegalArgumentException(FIRST_LESS_THAN_SECOND_MESSAGE);
         }
     }
 
-    private void checkValidZipCodes(int lower, int upper) {
-        if(String.valueOf(lower).length() < 5 || String.valueOf(upper).length() < 5){
-            throw new IllegalArgumentException(INVALID_5_DIGIT_ZIP);
+    /**
+     * Zipcodes should be a valid 5 digit range ranging from 10000 - 99999
+     * @param lower
+     * @param upper
+     */
+    private void checkValidZipCodeRange(int lower, int upper) {
+        if(lower < 10000 || lower > 99999){
+            throw new IllegalArgumentException(INVALID_5_DIGIT_ZIP_RANGE);
+        }
+
+        if(upper < 10000 || upper > 99999){
+            throw new IllegalArgumentException(INVALID_5_DIGIT_ZIP_RANGE);
         }
     }
     

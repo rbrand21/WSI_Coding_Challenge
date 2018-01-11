@@ -50,9 +50,6 @@ public class ZipCodeMinimizer {
         return minZipCodes;
     }
 
-    /**
-     * Private Methods
-     */
     private List<ZipCodeRange> sortZipCodes(List<ZipCodeRange> zips) {
         Collections.sort(zips);
         return zips;
