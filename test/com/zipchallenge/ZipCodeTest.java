@@ -31,4 +31,18 @@ class ZipCodeTest {
             ZipCode z = new ZipCode(500);
         }, ZipCode.INVALID_5_DIGIT_ZIP_RANGE);
     }
+
+    @Test
+    public void negativeNumber(){
+        assertThrows(IllegalArgumentException.class, ()->{
+            ZipCode z = new ZipCode(-95000);
+        }, ZipCode.INVALID_5_DIGIT_ZIP_RANGE);
+    }
+
+    @Test
+    public void correctNumberOfDigitsButOutOfRange(){
+        assertThrows(IllegalArgumentException.class, ()->{
+            ZipCode z = new ZipCode(00001);
+        }, ZipCode.INVALID_5_DIGIT_ZIP_RANGE);
+    }
 }

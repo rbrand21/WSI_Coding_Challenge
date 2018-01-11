@@ -37,24 +37,4 @@ class ZipCodeRangeTest {
         }, ZipCodeRange.FIRST_LESS_THAN_SECOND_MESSAGE);
     }
 
-    @Test
-    public void incorrectNumberOfDigits(){
-        assertThrows(IllegalArgumentException.class, ()->{
-            ZipCodeRange z = new ZipCodeRange(9500, 9600);
-        }, ZipCodeRange.INVALID_5_DIGIT_ZIP_RANGE);
-    }
-
-    @Test
-    public void negativeNumbers(){
-        assertThrows(IllegalArgumentException.class, ()->{
-            ZipCodeRange z = new ZipCodeRange(-95000, 96000);
-        }, ZipCodeRange.INVALID_5_DIGIT_ZIP_RANGE);
-    }
-
-    @Test
-    public void correctNumberOfDigitsButOutOfRange(){
-        assertThrows(IllegalArgumentException.class, ()->{
-            ZipCodeRange z = new ZipCodeRange(00001, 96000);
-        }, ZipCodeRange.INVALID_5_DIGIT_ZIP_RANGE);
-    }
 }
