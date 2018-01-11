@@ -1,12 +1,11 @@
 package com.zipchallenge;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-//TODO: Fix up main even more
-//TODO: Add print statements in main to ask for user input then to tell them here's there minimized list
 
 /**
  * The ZipCodeRangeProcessor is responsible for parsing the input string for numbers,
@@ -29,7 +28,7 @@ public class ZipCodeRangeProcessor {
      * @param s The string to parse for numbers
      * @return Extracted ZipCodeRanges from the passed in string.
      */
-    public List<ZipCodeRange> readZipCodesFromInput(String s) {
+    public @NotNull List<ZipCodeRange> readZipCodesFromInput(String s) {
         List<Integer> numbers;
         List<ZipCodeRange> zips;
 

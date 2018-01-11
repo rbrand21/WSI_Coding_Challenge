@@ -1,6 +1,6 @@
 package com.zipchallenge;
 
-
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,7 +34,7 @@ public class ZipCodeMinimizer {
      * This method is used to retrieve the mutually exclusive list from the list passed in.
      * @return A sorted list of mutually exclusive zip code ranges.
      */
-    public List<ZipCodeRange> getMinimizedZipCodes(List<ZipCodeRange> zips){
+    public @NotNull List<ZipCodeRange> getMinimizedZipCodes(@NotNull List<ZipCodeRange> zips){
         checkForEmptyList(zips);
 
         zips = sortZipCodes(zips);

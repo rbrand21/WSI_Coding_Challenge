@@ -17,6 +17,7 @@ public class ZipCode {
     }
 
     public void setValue(int value) {
+        checkValidZipCode(value);
         this.value = value;
     }
 
