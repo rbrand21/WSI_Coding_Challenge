@@ -64,7 +64,7 @@ public class ZipCodeRangeProcessor {
     private List<Integer> parseInputForNumbers(String s) {
         List<Integer> numbers = new ArrayList<>();
 
-        Pattern p = Pattern.compile("-?\\d+");
+        Pattern p = Pattern.compile(ZipCode.getRegex());
         Matcher m = p.matcher(s);
         while (m.find()) {
             numbers.add(Integer.parseInt(m.group()));

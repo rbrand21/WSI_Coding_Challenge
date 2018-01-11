@@ -29,4 +29,8 @@ public class ZipCode {
             throw new IllegalArgumentException(INVALID_5_DIGIT_ZIP_RANGE);
         }
     }
+
+    public static String getRegex() {
+        return "-?\\d+";
+    }
 }
