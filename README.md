@@ -4,6 +4,7 @@ The purpose of this project is to demonstrate my level of Java coding competency
 
 ## Usage
 main.java is a runnable class which takes in user input of zip codes and outputs the minimized list.
+The project can be ran a number of ways but the easiest would be to download the zip file and use your IDE to Open Project, then run main.java.
 
 ## Tests
-All of the tests can be found under the test directory. All of the corner cases for the algorithm should have corresponding tests.
+All of the tests can be found under the test/com/zipchallenge directory.
