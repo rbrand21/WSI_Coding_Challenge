@@ -21,6 +21,7 @@ import java.util.List;
  * A user defined object, ZipCodeRange, was used to make the code more readable and maintainable.
  */
 public class ZipCodeMinimizer {
+    public static final String NON_EMPTY_LIST_MESSAGE = "Must set a non empty list";
     private List<ZipCodeRange> minZipCodes;
 
     /**
@@ -34,7 +35,7 @@ public class ZipCodeMinimizer {
      * @return A sorted list of mutually exclusive zip code ranges.
      */
     public List<ZipCodeRange> getMinimizedZipCodes(List<ZipCodeRange> zips){
-        checkFormattingOfList(zips);
+        checkForEmptyList(zips);
 
         zips = sortZipCodes(zips);
 
@@ -89,22 +90,9 @@ public class ZipCodeMinimizer {
         //Overlap is indicated when the start is in between the prev zip range OR one above the prev zip's end.
     }
 
-    private void checkFormattingOfList(List<ZipCodeRange> zipCodes) {
-        checkForEmptyList(zipCodes);
-        checkForIllegalStartAndEnd(zipCodes);
-    }
-
     private void checkForEmptyList(List<ZipCodeRange> zipCodes) {
         if(zipCodes.isEmpty()){
-            throw new IllegalArgumentException("Must set a non empty list");
-        }
-    }
-
-    private void checkForIllegalStartAndEnd(List<ZipCodeRange> zipCodes) {
-        for(int i=0; i<zipCodes.size(); i++){
-            if(zipCodes.get(i).getStart() > zipCodes.get(i).getEnd()){
-                throw new IllegalArgumentException("All ranges must start with the lower number and end with higher number");
-            }
+            throw new IllegalArgumentException(NON_EMPTY_LIST_MESSAGE);
         }
     }
 }

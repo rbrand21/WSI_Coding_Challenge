@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//TODO: Comment this class.
-//TODO: Convert all error messages to constants
 //TODO: Fix up main even more
 //TODO: Add print statements in main to ask for user input then to tell them here's there minimized list
 //TODO: Negative numbers
