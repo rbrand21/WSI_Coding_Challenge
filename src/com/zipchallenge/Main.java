@@ -3,10 +3,7 @@ package com.zipchallenge;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
 
@@ -14,6 +11,8 @@ public class Main {
         ZipCodeRangeProcessor zipProcessor = new ZipCodeRangeProcessor();
         ZipCodeMinimizer zipMinimizer = new ZipCodeMinimizer();
         String input = null;
+
+        System.out.print("Please enter your list of ZipCodes to be minimized: ");
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -31,6 +30,9 @@ public class Main {
     }
 
     private static void printList(List<ZipCodeRange> myList) {
+
+        System.out.print("The minimized ZipCode list is: ");
+
         for(int i=0; i<myList.size(); i++){
             if (i == myList.size()-1){
                 System.out.print("[" + myList.get(i).getStart() + ", " + myList.get(i).getEnd() + "]");
