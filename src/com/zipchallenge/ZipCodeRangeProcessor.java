@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
  */
 public class ZipCodeRangeProcessor {
 
+    public static final String Non_NULL_STRING_MESSAGE = "Cannot accept a null string";
     final String NON_EMPTY_STRING_MESSAGE = "Please input a non-empty string";
     final String INCORRECT_NUMBER_OF_NUMBERS_MESSAGE = "Please input a nonzero even number of zip codes (ranges)";
 
@@ -43,6 +44,9 @@ public class ZipCodeRangeProcessor {
     }
 
     private void checkInput(String s) {
+        if (s == null){
+            throw new IllegalArgumentException(Non_NULL_STRING_MESSAGE);
+        }
         if(s.isEmpty()){
             throw new IllegalArgumentException(NON_EMPTY_STRING_MESSAGE);
         }

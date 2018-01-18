@@ -20,6 +20,7 @@ import java.util.List;
  */
 public class ZipCodeMinimizer {
     public static final String NON_EMPTY_LIST_MESSAGE = "Must set a non empty list";
+    public static final String NON_NULL_LIST_MESSAGE = "Must pass in a non null list";
     private List<ZipCodeRange> minZipCodes;
 
     /**
@@ -33,7 +34,7 @@ public class ZipCodeMinimizer {
      * @return A sorted list of mutually exclusive zip code ranges.
      */
     public List<ZipCodeRange> getMinimizedZipCodes(List<ZipCodeRange> zips){
-        checkForEmptyList(zips);
+        checkList(zips);
 
         zips = sortZipCodes(zips);
 
@@ -88,7 +89,10 @@ public class ZipCodeMinimizer {
         //Overlap is indicated when the start is in between the prev zip range OR one above the prev zip's end.
     }
 
-    private void checkForEmptyList(List<ZipCodeRange> zipCodes) {
+    private void checkList(List<ZipCodeRange> zipCodes) {
+        if(zipCodes == null){
+            throw new IllegalArgumentException(NON_NULL_LIST_MESSAGE);
+        }
         if(zipCodes.isEmpty()){
             throw new IllegalArgumentException(NON_EMPTY_LIST_MESSAGE);
         }
