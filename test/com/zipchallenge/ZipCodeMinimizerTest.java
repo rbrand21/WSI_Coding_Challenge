@@ -141,6 +141,6 @@ class ZipCodeMinimizerTest {
     public void nullListGetMinimizedZipCodes(){
         assertThrows(IllegalArgumentException.class, () ->{
             minimizedList = zipCodeMinimizer.getMinimizedZipCodes(null);
-        }, zipCodeMinimizer.NON_NULL_LIST_MESSAGE12345);
+        }, zipCodeMinimizer.NON_NULL_LIST_MESSAGE);
     }
 }
